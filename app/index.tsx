@@ -1,8 +1,11 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import { SQLiteProvider, useSQLiteContext } from "expo-sqlite";
 
-const index = () => {
+import { migrateDbIfNeeded } from "@/lib/database";
+
+const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Welcome to billing app!</Text>
@@ -12,9 +15,22 @@ const index = () => {
       <Link href="/cart" style={styles.button}>
         <Text style={styles.buttonText}>Go to cart</Text>
       </Link>
+      <Link href="/admin" style={styles.button}>
+        <Text style={styles.buttonText}>Admin</Text>
+      </Link>
     </View>
   );
 };
+
+const index = () => {
+  // const db = useSQLiteContext();
+  return (
+    <SQLiteProvider databaseName="billing.db" onInit={migrateDbIfNeeded}>
+      <Home />
+    </SQLiteProvider>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

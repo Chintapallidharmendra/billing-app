@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Mayuri Billing",
-    "slug": "MayuriBilling",
+    "slug": "billing-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -34,7 +34,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true

@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'billing-app'
+rootProject.name = 'Mayuri Billing'
 
 dependencyResolutionManagement {
   versionCatalogs {
